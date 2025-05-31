@@ -1,58 +1,72 @@
-Blog with JSONPlaceholder
-📘 This README is also available in Português 🇧🇷 (scroll down for the full translation)
+# Blog with JSONPlaceholder
 
-📖 Description
-This is a simple blog project for learning purposes. It uses the free JSONPlaceholder API to simulate a real blog with posts and users.
+> 📘 This README is also available in **Português (PT-BR)** — _scroll down for the full translation!_
 
-On the Home page, users can see a list of blog post titles. By clicking a title, the app navigates to the PostDetails page, which displays the full post content and the author's information.
+---
 
-🛠️ Technologies
-JavaScript
+## 📖 Description
 
-React
+A simple, learning-focused blog project powered by [JSONPlaceholder](https://jsonplaceholder.typicode.com/). It simulates a real blog, featuring posts and user profiles.
 
-HTML & CSS
+- **Home page:** View a list of blog post titles. Clicking a title navigates to the post’s details.
+- **Post Details:** See the full post content and author information.
 
-JSONPlaceholder (REST API)
+---
 
-🚀 How to Run the Project
-Clone the repository:
+## 🛠️ Technologies
 
-bash
-Copiar
-Editar
-git clone https://github.com/Marcoz-VS/Blog/tree/dev
-Go to the project folder:
+- **JavaScript**
+- **React**
+- **HTML & CSS**
+- **JSONPlaceholder** (REST API)
 
-bash
-Copiar
-Editar
-cd your-project-name
-Install the dependencies:
+---
 
-bash
-Copiar
-Editar
+## 🚀 Getting Started
+
+**1. Clone the repository:**
+
+```bash
+git clone https://github.com/Marcoz-VS/Blog.git
+```
+
+**2. Go to the project folder:**
+
+```bash
+cd Blog
+```
+
+**3. Install dependencies:**
+
+```bash
 npm install
-Run the development server:
+```
 
-bash
-Copiar
-Editar
+**4. Run the development server:**
+
+```bash
 npm run dev
-✅ Make sure you have Node.js and npm installed.
+```
 
-🧭 Pages
-🏠 Home
+> ✅ _Make sure you have Node.js and npm installed._
+
+---
+
+## 🧭 Pages
+
+### 🏠 Home
+
 Fetches and displays a list of post titles from the API. Each title is clickable and leads to the post details page.
 
-📄 PostDetails
-Displays the full title, content (body), and the user who created the post. Uses the userId field from the post to fetch the author's data from /users.
+### 📄 Post Details
 
-📁 Folder Structure
-css
-Copiar
-Editar
+Shows the full title, content (body), and the author of the post. The app uses the `userId` field to fetch author data from `/users`.
+
+---
+
+## 📁 Folder Structure
+
+```
 src/
 ├── pages/
 │   ├── Home/
@@ -65,62 +79,81 @@ src/
 │       └── postService.js
 ├── App.jsx
 └── main.jsx
-🙏 Thanks
-Thanks to JSONPlaceholder for providing a free fake API for testing and prototyping.
+```
 
-📘 Leia em Português (PT-BR)
-📖 Descrição
-Este é um projeto simples de blog, feito com fins educativos. Ele utiliza a API gratuita JSONPlaceholder para simular um blog real com posts e usuários.
+---
 
-Na página Home, o usuário pode ver uma lista com os títulos dos posts. Ao clicar em um título, o aplicativo leva para a página PostDetails, onde é exibido o conteúdo completo do post e as informações do autor.
+## 🙏 Thanks
 
-🛠️ Tecnologias
-JavaScript
+Huge thanks to [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for providing a free fake API for testing and prototyping.
 
-React
+---
 
-HTML e CSS
+# 📘 Leia em Português (PT-BR)
 
-JSONPlaceholder (API REST)
+## 📖 Descrição
 
-🚀 Como Rodar o Projeto
-Clone o repositório:
+Este é um projeto simples de blog, feito para fins educativos, utilizando a [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para simular posts e usuários.
 
-bash
-Copiar
-Editar
-git clone https://github.com/Marcoz-VS/Blog/tree/dev
-Acesse a pasta do projeto:
+- **Página Home:** Lista de títulos dos posts. Ao clicar, mostra os detalhes do post.
+- **Detalhes do Post:** Exibe o conteúdo e informações do autor.
 
-bash
-Copiar
-Editar
-cd seu-nome-do-projeto
-Instale as dependências:
+---
 
-bash
-Copiar
-Editar
+## 🛠️ Tecnologias
+
+- **JavaScript**
+- **React**
+- **HTML e CSS**
+- **JSONPlaceholder** (API REST)
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+**1. Clone o repositório:**
+
+```bash
+git clone https://github.com/Marcoz-VS/Blog.git
+```
+
+**2. Acesse a pasta do projeto:**
+
+```bash
+cd Blog
+```
+
+**3. Instale as dependências:**
+
+```bash
 npm install
-Rode o servidor de desenvolvimento:
+```
 
-bash
-Copiar
-Editar
+**4. Rode o servidor de desenvolvimento:**
+
+```bash
 npm run dev
-✅ Certifique-se de ter o Node.js e o npm instalados.
+```
 
-🧭 Páginas
-🏠 Home
+> ✅ _Certifique-se de ter o Node.js e o npm instalados._
+
+---
+
+## 🧭 Páginas
+
+### 🏠 Home
+
 Busca e exibe uma lista com os títulos dos posts. Cada título é clicável e leva aos detalhes do post.
 
-📄 PostDetails
-Mostra o título completo, o conteúdo (body) e o autor do post. Usa o campo userId do post para buscar os dados do autor na rota /users.
+### 📄 Detalhes do Post
 
-📁 Estrutura de Pastas
-css
-Copiar
-Editar
+Exibe o título completo, o conteúdo (body) e o autor. Usa o campo `userId` para buscar dados do autor em `/users`.
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
 src/
 ├── pages/
 │   ├── Home/
@@ -133,5 +166,10 @@ src/
 │       └── postService.js
 ├── App.jsx
 └── main.jsx
-🙏 Agradecimentos
-Agradecimentos ao JSONPlaceholder pela API gratuita para testes e protótipos.
+```
+
+---
+
+## 🙏 Agradecimentos
+
+Agradecimentos ao [JSONPlaceholder](https://jsonplaceholder.typicode.com/) pela API gratuita para testes e protótipos.
