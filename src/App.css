@@ -1,0 +1,154 @@
+body {
+    font-family: 'Helvetica Neue', system-ui, -apple-system, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #d9d9d9;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-item {
+    background: #000;
+    margin: 8px 0;
+    padding: 12px;
+    border-bottom: 1px solid #2f3336;
+    transition: background-color 0.2s;
+}
+
+.post-item:hover {
+    background-color: #1c2526;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #d9d9d9;
+    display: block;
+}
+
+.post-link:hover {
+    color: #d9d9d9;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.post-author {
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+}
+
+.post-email {
+    font-weight: 400;
+    color: #71767b;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.post-body {
+    font-size: 14px;
+    color: #71767b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1c2526;
+    border-radius: 12px;
+    border: 1px solid #2f3336;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #1a91da;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+    color: #d9d9d9;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #2f3336;
+    margin: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    ul {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+
+    .post-item,
+    .card {
+        margin: 8px;
+        padding: 10px;
+    }
+
+    .post-title {
+        font-size: 15px;
+    }
+
+    .post-body {
+        font-size: 13px;
+    }
+
+    .post-author {
+        font-size: 14px;
+    }
+
+    .post-email {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
