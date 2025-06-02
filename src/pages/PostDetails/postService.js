@@ -15,3 +15,11 @@ export async function getUserById(userId) {
   }
   return await response.json();
 }
+
+export async function getAllUsers() {
+  const response = await fetch(`${BASE_URL}/users`);
+  if (!response.ok) {
+    throw new Error('Error al obtener los usuarios');
+  }
+  return await response.json();
+}

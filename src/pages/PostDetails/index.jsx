@@ -1,10 +1,12 @@
-// src/pages/PostDetails/index.jsx
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { getPostById, getUserById } from './postService';
 
 function PostDetails() {
   const { id } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const assignedUserId = searchParams.get('userId');
   const [post, setPost] = useState(null);
   const [author, setAuthor] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,10 +18,11 @@ function PostDetails() {
         const postData = await getPostById(id);
         setPost(postData);
 
-        const userData = await getUserById(postData.userId);
+        const userIdToUse = assignedUserId || postData.userId;
+        const userData = await getUserById(userIdToUse);
         setAuthor(userData);
       } catch (err) {
-        console.error(err);
+        console.error('Erro ao carregar os dados:', err);
         setError('Hubo un error al cargar los datos.');
       } finally {
         setLoading(false);
@@ -27,7 +30,7 @@ function PostDetails() {
     }
 
     fetchPostAndAuthor();
-  }, [id]);
+  }, [id, assignedUserId]);
 
   if (loading) return <p className="loading">Cargando...</p>;
   if (error) return <p className="error">{error}</p>;
