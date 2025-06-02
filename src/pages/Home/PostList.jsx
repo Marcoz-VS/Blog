@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react';
-import { getUserById } from '../PostDetails/postService';
 import PostItem from './PostItem';
 
+// Componente responsável por listar todos os posts e buscar autores únicos de uma API externa
 const PostList = ({ posts }) => {
   const [postsWithAuthors, setPostsWithAuthors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    async function fetchAuthors() {
+    async function fetchRandomUsersAndAssign() {
       try {
-        console.log('Posts recebidos:', posts.map(p => ({ id: p.id, userId: p.userId })));
-        const postsWithAuthorData = await Promise.all(
-          posts.map(async (post) => {
-            const userData = await getUserById(post.userId);
-            console.log(`Post ${post.id} - userId ${post.userId}:`, userData);
-            return { ...post, author: userData.name, authorEmail: userData.email };
-          })
-        );
+        // Busca o mesmo número de usuários que o número de posts
+        const response = await fetch(`https://randomuser.me/api/?results=${posts.length}&nat=br`);
+        const data = await response.json();
+        const users = data.results;
+
+        // Associa cada post a um usuário único da resposta da API
+        const postsWithAuthorData = posts.map((post, index) => {
+          const user = users[index];
+          return {
+            ...post,
+            author: `${user.name.first} ${user.name.last}`,
+            authorEmail: user.email,
+          };
+        });
+
         setPostsWithAuthors(postsWithAuthorData);
       } catch (err) {
         console.error('Erro ao buscar autores:', err);
@@ -26,12 +33,15 @@ const PostList = ({ posts }) => {
         setLoading(false);
       }
     }
-    fetchAuthors();
+
+    fetchRandomUsersAndAssign();
   }, [posts]);
 
+  // Estados de carregamento e erro
   if (loading) return <p className="loading">Carregando posts...</p>;
   if (error) return <p className="error">{error}</p>;
 
+  // Renderiza os posts com os dados dos autores
   return (
     <ul>
       {postsWithAuthors.map((post) => (
