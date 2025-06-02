@@ -1,68 +1,96 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', system-ui, -apple-system, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #000;
+    color: #d9d9d9;
 }
 
 h1 {
     text-align: center;
-    color: #2c3e50;
+    color: #fff;
     margin: 20px 0;
+    font-weight: 700;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+.post-item {
+    background: #000;
+    margin: 8px 0;
+    padding: 12px;
+    border-bottom: 1px solid #2f3336;
+    transition: background-color 0.2s;
 }
 
-li:hover {
-    transform: translateY(-2px);
+.post-item:hover {
+    background-color: #1c2526;
 }
 
-a {
+.post-link {
     text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
+    color: #d9d9d9;
+    display: block;
 }
 
-a:hover {
-    color: #2980b9;
+.post-link:hover {
+    color: #d9d9d9;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.post-author {
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.post-body {
+    font-size: 14px;
+    color: #71767b;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .card {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #1c2526;
+    border-radius: 12px;
+    border: 1px solid #2f3336;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 button {
-    background-color: #3498db;
-    color: white;
+    background-color: #1da1f2;
+    color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #1a91da;
 }
 
 .loading,
@@ -70,24 +98,42 @@ button:hover {
     text-align: center;
     font-size: 18px;
     margin: 20px;
+    color: #d9d9d9;
 }
 
 hr {
     border: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #2f3336;
     margin: 20px 0;
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
+    ul {
+        max-width: 100%;
+        padding: 0 8px;
+    }
 
-    li,
+    .post-item,
     .card {
-        margin: 10px;
+        margin: 8px;
         padding: 10px;
     }
 
+    .post-title {
+        font-size: 15px;
+    }
+
+    .post-body {
+        font-size: 13px;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
