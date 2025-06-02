@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 
 const PostItem = ({ post }) => {
   return (
@@ -18,3 +17,5 @@ const PostItem = ({ post }) => {
 };
 
 export default PostItem;
+
+

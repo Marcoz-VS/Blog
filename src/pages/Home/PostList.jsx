@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAllUsers } from '../PostDetails/postService';
 import PostItem from './PostItem';
 
+
 const PostList = ({ posts }) => {
   const [postsWithAuthors, setPostsWithAuthors] = useState([]);
   const [loading, setLoading] = useState(true);
