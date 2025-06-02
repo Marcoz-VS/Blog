@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom';
+// src/pages/PostDetails/index.jsx
 import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { getPostById, getUserById } from './postService';
 
 function PostDetails() {
@@ -28,16 +29,17 @@ function PostDetails() {
     fetchPostAndAuthor();
   }, [id]);
 
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="loading">Cargando...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+    <div className="card">
+      <h1>{post?.title || 'Título não disponível'}</h1>
+      <p>{post?.body || 'Conteúdo não disponível'}</p>
       <hr />
-      <h3>Autor: {author.name}</h3>
-      <p>Email: {author.email}</p>
+      <h3>Autor: {author?.name || 'Desconhecido'}</h3>
+      <p>Email: {author?.email || 'Não disponível'}</p>
+      <Link to="/">Volver a la lista de posts</Link>
     </div>
   );
 }
